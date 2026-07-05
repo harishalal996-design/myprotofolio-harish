@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hareesh Alal — Full Stack Java Developer</title>
+  <meta name="description" content="Portfolio of Hareesh Alal — Full Stack Java Developer specializing in Java, React, MySQL, HTML, CSS and JavaScript. Currently interning at Tap Academy, Bangalore." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Sora:wght@300;400;600;700;800&family=Space+Mono:wght@400;700&family=Caveat:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── CUSTOM CURSOR ── -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- ── SCROLL PROGRESS BAR ── -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- ══════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════ -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a href="#hero" class="nav-logo" id="nav-logo">
+          <span class="logo-bracket">&lt;</span>HA<span class="logo-bracket">/&gt;</span>
+        </a>
+        <div class="nav-links">
+          <a href="#about"     class="nav-link" id="nav-about">About</a>
+          <a href="#skills"    class="nav-link" id="nav-skills">Skills</a>
+          <a href="#featured"  class="nav-link" id="nav-featured">Projects</a>
+          <a href="#education" class="nav-link" id="nav-education">Education</a>
+          <a href="#contact"   class="nav-link" id="nav-contact">Contact</a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="https://github.com/hareeshalal" target="_blank" rel="noopener" class="nav-icon-link" id="nav-github" aria-label="GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener" class="nav-icon-link" id="nav-linkedin" aria-label="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="#contact" class="btn-gradient" id="nav-cta">Hire Me</a>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile-menu" id="nav-mobile-menu" aria-hidden="true">
+      <a href="#about"     class="nav-mobile-link">About</a>
+      <a href="#skills"    class="nav-mobile-link">Skills</a>
+      <a href="#featured"  class="nav-mobile-link">Projects</a>
+      <a href="#education" class="nav-mobile-link">Education</a>
+      <a href="#contact"   class="nav-mobile-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════
+       HERO — AURORA + PARTICLES
+  ══════════════════════════════════════ -->
+  <section class="hero" id="hero" aria-label="Hero section">
+    <!-- Aurora animated background layers -->
+    <div class="hero-photo-bg"></div>
+    <div class="aurora-layer aurora-1"></div>
+    <div class="aurora-layer aurora-2"></div>
+    <div class="aurora-layer aurora-3"></div>
+    <div class="hero-overlay"></div>
+    <!-- Particle canvas -->
+    <canvas class="particles-canvas" id="particles-canvas" aria-hidden="true"></canvas>
+    <!-- Floating orbs -->
+    <div class="float-orb float-orb-1" aria-hidden="true"></div>
+    <div class="float-orb float-orb-2" aria-hidden="true"></div>
+    <div class="float-orb float-orb-3" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge" id="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Available for opportunities
+      </div>
+      <p class="hero-eyebrow" id="hero-eyebrow">Full Stack Java Developer</p>
+      <h1 class="hero-headline" id="hero-headline">
+        <span class="hero-name-line">
+          <span class="hero-word-upright">Hareesh</span>
+        </span>
+        <span class="hero-name-line">
+          <em class="hero-word-cursive">Alal</em>
+        </span>
+      </h1>
+      <p class="hero-sub" id="hero-sub">
+        Engineering robust Java backends &amp; crafting<br />
+        <span class="hero-sub-highlight">pixel-perfect React frontends</span>
+        that users love.
+      </p>
+      <div class="hero-tech-row" id="hero-tech-row" aria-label="Tech stack">
+        <span class="hero-tech-tag">Java</span>
+        <span class="hero-tech-sep">·</span>
+        <span class="hero-tech-tag">React</span>
+        <span class="hero-tech-sep">·</span>
+        <span class="hero-tech-tag">MySQL</span>
+        <span class="hero-tech-sep">·</span>
+        <span class="hero-tech-tag">JavaScript</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#featured" class="btn-gradient btn-large" id="hero-cta-work">View My Work</a>
+        <a href="#contact"  class="btn-ghost  btn-large" id="hero-cta-contact">Let's Talk</a>
+      </div>
+      <div class="hero-scroll-hint" id="hero-scroll">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+        <span>Scroll to explore</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       STATS COUNTERS
+  ══════════════════════════════════════ -->
+  <section class="stats-band" id="stats" aria-label="Stats section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item" id="stat-exp">
+          <span class="stat-number" data-target="1" data-suffix="+">0</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item" id="stat-projects">
+          <span class="stat-number" data-target="5" data-suffix="+">0</span>
+          <span class="stat-label">Projects Built</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item" id="stat-tech">
+          <span class="stat-number" data-target="8" data-suffix="+">0</span>
+          <span class="stat-label">Technologies</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item" id="stat-commits">
+          <span class="stat-number" data-target="200" data-suffix="+">0</span>
+          <span class="stat-label">Commits This Year</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       ABOUT
+  ══════════════════════════════════════ -->
+  <section class="section section-about" id="about" aria-label="About section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Who I am</p>
+        <h2 class="section-title">
+          Building the web with<br/><em class="cursive-accent">purpose & passion</em>
+        </h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-photo-col reveal">
+          <div class="about-photo-frame">
+            <div class="about-photo-inner">
+              <span class="about-initials">HA</span>
+            </div>
+            <div class="about-photo-ring"></div>
+            <div class="about-photo-dot about-photo-dot-1"></div>
+            <div class="about-photo-dot about-photo-dot-2"></div>
+            <div class="about-status-badge">
+              <span class="status-pulse"></span> Open to Work
+            </div>
+          </div>
+        </div>
+        <div class="about-content reveal">
+          <p class="about-body">
+            I'm <strong>Hareesh Alal</strong>, a Full Stack Java Developer currently interning at
+            <a href="https://www.tapacademy.in" target="_blank" rel="noopener" class="link-accent" id="about-tap-link">Tap Academy</a>,
+            Bangalore — one of India's leading tech training institutes.
+          </p>
+          <p class="about-body">
+            My stack spans both ends of the web: Java-powered backends with MySQL databases,
+            paired with dynamic React frontends. I love building systems that solve real problems —
+            from managing hospitals to delivering food.
+          </p>
+          <p class="about-body">
+            When I'm not coding, I'm deep in architecture discussions, learning new Java patterns,
+            or levelling up my React skills.
+          </p>
+          <div class="about-tags">
+            <span class="pill-tag">☕ Java</span>
+            <span class="pill-tag">⚛️ React</span>
+            <span class="pill-tag">🗄️ MySQL</span>
+            <span class="pill-tag">🌐 HTML/CSS</span>
+            <span class="pill-tag">⚡ JavaScript</span>
+            <span class="pill-tag">🎓 Tap Academy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Floating bg elements -->
+    <div class="bg-blob bg-blob-1" aria-hidden="true"></div>
+    <div class="bg-blob bg-blob-2" aria-hidden="true"></div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SKILLS — TECH ICONS
+  ══════════════════════════════════════ -->
+  <section class="section section-skills" id="skills" aria-label="Skills section">
+    <div class="skills-dark-bg"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <div class="section-header reveal">
+        <p class="section-eyebrow section-eyebrow--light">What I work with</p>
+        <h2 class="section-title section-title--light">
+          My <em class="cursive-accent cursive-accent--blue">tech stack</em>
+        </h2>
+      </div>
+
+      <div class="tech-categories">
+
+        <div class="tech-category reveal">
+          <h3 class="tech-cat-title">Backend</h3>
+          <div class="tech-icons-row">
+            <div class="tech-icon-card" id="tech-java">
+              <div class="tech-icon-wrap" style="--icon-color:#f89820;">
+                <svg viewBox="0 0 128 128" width="36" height="36"><path fill="#f89820" d="M47.617 98.12s-4.767 2.774 3.397 3.71c9.892 1.128 14.947.968 25.845-1.092 0 0 2.871 1.795 6.873 3.351-24.439 10.47-55.308-.607-36.115-5.969zm-2.988-13.665s-5.348 3.959 2.823 4.805c10.567 1.091 18.91 1.18 33.354-1.6 0 0 1.993 2.025 5.132 3.131-29.542 8.64-62.446.68-41.309-6.336z"/><path fill="#ea2d2e" d="M69.802 61.271c6.025 6.935-1.58 13.17-1.58 13.17s15.289-7.891 8.269-17.777c-6.559-9.215-11.587-13.792 15.635-29.58 0 .001-42.731 10.67-22.324 34.187z"/><path fill="#f89820" d="M102.123 108.229s3.529 2.91-3.888 5.159c-14.102 4.272-58.706 5.56-71.094.171-4.451-1.938 3.899-4.625 6.526-5.192 2.739-.593 4.303-.485 4.303-.485-4.953-3.487-32.013 6.85-13.743 9.815 49.821 8.076 90.817-3.637 77.896-9.468zM49.912 70.294s-22.686 5.389-8.033 7.348c6.188.828 18.518.638 30.011-.326 9.39-.789 18.813-2.474 18.813-2.474s-3.308 1.419-5.704 3.053c-23.042 6.061-67.544 3.238-54.731-2.958 10.832-5.239 19.644-4.643 19.644-4.643zm40.697 22.747c23.421-12.167 12.591-23.86 5.032-22.285-1.848.385-2.677.72-2.677.72s.688-1.079 2-1.543c14.953-5.255 26.451 15.503-4.823 23.725 0-.002.359-.327.468-.617z"/><path fill="#ea2d2e" d="M76.491 1.587S89.459 14.563 64.188 34.51c-20.266 16.006-4.621 25.13-.007 35.559-11.831-10.673-20.509-20.07-14.688-28.815C58.041 28.42 81.722 22.195 76.491 1.587z"/><path fill="#f89820" d="M52.214 126.021c22.476 1.437 57-.8 57.817-11.436 0 0-1.571 4.032-18.577 7.231-19.186 3.612-42.854 3.191-56.887.874 0 .001 2.875 2.381 17.647 3.331z"/></svg>
+              </div>
+              <span class="tech-icon-label">Java</span>
+            </div>
+            <div class="tech-icon-card" id="tech-spring">
+              <div class="tech-icon-wrap" style="--icon-color:#6db33f;">
+                <svg viewBox="0 0 128 128" width="36" height="36"><path fill="#6db33f" d="M116.452 6.643a59.104 59.104 0 01-6.837 12.136C100.979 7.619 83.813.303 64.748.303 28.967.303-.05 29.318-.05 65.098c0 35.783 29.017 64.798 64.798 64.798 28.948 0 53.455-19.03 61.709-45.229a8.232 8.232 0 00-3.891-9.37l-6.738-3.909c-.99-.575-2.21.149-2.21 1.296v.256c0 32.317-26.3 58.618-58.618 58.618-32.32 0-58.62-26.3-58.62-58.618 0-32.32 26.3-58.619 58.62-58.619 17.126 0 32.535 7.343 43.301 19.065l-12.195 8.728c-1.176.842-.57 2.697.874 2.697h35.063c.987 0 1.787-.8 1.787-1.787V7.951c0-1.444-1.856-2.05-2.697-.874l-10.578 7.566z"/></svg>
+              </div>
+              <span class="tech-icon-label">Spring</span>
+            </div>
+            <div class="tech-icon-card" id="tech-mysql-icon">
+              <div class="tech-icon-wrap" style="--icon-color:#4479a1;">
+                <svg viewBox="0 0 128 128" width="36" height="36"><path fill="#4479a1" d="M116.948 97.807c-6.863-.187-12.104.452-16.585 2.341-1.273.537-3.305.552-3.513 2.147.7.733.809 1.829 1.365 2.731 1.07 1.73 2.876 4.052 4.488 5.268 1.762 1.33 3.577 2.751 5.465 3.902 3.358 2.047 7.107 3.217 10.34 5.268 1.906 1.21 3.799 2.733 5.658 4.094.92.675 1.537 1.724 2.732 2.147v-.204c-.627-.8-.79-1.898-1.366-2.733l-2.538-2.537c-2.48-3.292-5.629-6.184-8.976-8.562-2.669-1.928-8.684-4.491-9.799-7.617l-.205-.205c1.912-.215 4.148-.898 5.932-1.365 2.979-.8 5.642-.602 8.72-1.365l4.143-1.162v-.817c-1.547-1.584-2.651-3.676-4.289-5.165-4.359-3.906-9.136-7.81-14.015-11.062-2.72-1.76-6.088-2.902-8.976-4.288-.971-.474-2.677-.712-3.293-1.568-.971-1.333-1.503-3.047-2.243-4.583-1.569-3.149-3.105-6.608-4.493-9.978-1.002-2.368-1.654-4.722-2.94-6.826-6.07-9.778-12.582-15.671-22.677-21.48-2.147-1.239-4.731-1.726-7.457-2.34l-4.39-.208c-.894-.373-1.819-1.458-2.636-1.975-3.306-2.076-11.799-6.592-14.218-.615-1.549 3.823 2.31 7.573 3.699 9.514 1.002 1.376 2.286 2.92 2.994 4.49.465 1.039.545 2.088.961 3.195 1.002 2.715 1.871 5.669 3.194 8.174 .657 1.277 1.383 2.616 2.244 3.7.516.66 1.403 1.015 1.569 2.147-1.485 2.067-1.568 5.261-2.437 7.818-3.804 12.012-.238 26.9 3.295 35.804.89 2.312 3.057 4.724 4.9 6.324 1.038.921 2.038 2.512 3.5 3.097 3.823 1.547 3.895-.988 4.693-4.887.192-.927.533-1.614.752-2.438l1.413 2.829c1.02 1.649 2.498 3.371 3.895 4.693 1.412 1.337 2.786 3.077 4.49 3.9.908.434 2.016.491 2.637 1.36-.698.967-3.446.957-4.69 1.568-.806.4-1.803.602-2.442.978-1.449 1.09-2.853 2.284-4.299 3.295-2.073 1.433-5.082 2.765-6.631 4.9-1.538 2.12-2.455 4.631-1.366 7.614 1.127 3.091 3.948 4.733 7.614 5.5 1.793.375 3.716.49 5.447.39 1.703-.098 3.374-.605 5.037-.778 3.368-.347 6.842-.346 9.916-1.366 1.697-.559 3.38-1.387 5.037-2.143.957-.441 2.033-1.098 3.093-1.574.924-.421 2.203-.528 2.828-1.162 1.254-1.263 1.534-2.944 2.34-4.492 1.449-2.777 2.974-5.753 4.292-8.558 1.316-2.804 2.68-5.655 3.896-8.556.819-1.941 1.177-3.921 1.98-5.459 1.602-3.023 3.497-5.905 5.461-8.752.975-1.424 1.827-2.89 2.832-4.29.583-.807 1.477-1.163 1.567-2.438-3.347-.335-5.15-2.13-7.213-4.093-.667-.629-1.318-1.23-1.979-1.776l-2.34-1.979c-.659-.548-1.478-.849-2.146-1.366-1.35-1.029-2.602-2.198-3.903-3.294-1.302-1.098-2.574-2.248-3.906-3.298-.66-.515-1.318-1.051-1.979-1.566-.394-.305-1.063-.555-1.162-.975-.288-1.23.673-2.25.964-3.294.294-1.054.609-2.15.98-3.296l1.761-5.065c.614-1.766 1.178-3.62 1.977-5.27.4-.837.998-1.625 1.369-2.446.369-.819.515-1.695 1.163-2.244l2.831 2.638c.965.909 1.773 1.957 2.831 2.828.658.543 1.317 1.127 1.975 1.772.664.651 1.37 1.238 1.979 1.977 1.21 1.484 2.199 3.144 3.498 4.491 1.307 1.355 2.704 2.65 3.903 4.09.625.742 1.185 1.533 1.978 2.147.796.615 1.769 1 2.535 1.571l4.693 3.296c1.521 1.07 3.208 2.051 4.894 2.832.784.367 1.744.51 2.44.98l.204-.205zm0 0"/></svg>
+              </div>
+              <span class="tech-icon-label">MySQL</span>
+            </div>
+            <div class="tech-icon-card" id="tech-hibernate-icon">
+              <div class="tech-icon-wrap" style="--icon-color:#bcae79;">
+                <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#bcae79" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              </div>
+              <span class="tech-icon-label">ORM/JDBC</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-category reveal">
+          <h3 class="tech-cat-title">Frontend</h3>
+          <div class="tech-icons-row">
+            <div class="tech-icon-card" id="tech-react-icon">
+              <div class="tech-icon-wrap" style="--icon-color:#61dafb;">
+                <svg viewBox="0 0 128 128" width="36" height="36"><g fill="#61dafb"><circle cx="64" cy="64" r="11.4"/><path d="M107.3 45.2c-2.2-.8-4.5-1.6-6.9-2.3.6-2.4 1.1-4.8 1.5-7.1 2.1-13-1.2-21.1-7.6-24.9-6.3-3.8-16-.2-25.8 9.5-2.1 2.1-4.2 4.4-6.2 6.9-1.9-2.1-3.9-4.2-6-6.1C45.3 10.7 35.3 6.7 29 10.4c-6.5 3.9-9.4 13.5-7.2 26.4.4 2.3.9 4.7 1.5 7.1-2.4.7-4.7 1.4-6.9 2.3C5.4 50.7.6 57.4.6 64s4.8 13.4 16.1 18.5c2.2.9 4.5 1.7 6.9 2.3-.6 2.4-1.1 4.8-1.5 7.1-2.1 13 1.2 21.1 7.6 24.9 6.3 3.8 16 .2 25.8-9.5 2.1-2.1 4.2-4.4 6.2-6.9 1.9 2.1 3.9 4.2 6 6.1 9.9 9.5 19.9 13.5 26.2 9.8 6.5-3.9 9.4-13.5 7.2-26.4-.4-2.3-.9-4.7-1.5-7.1 2.4-.7 4.7-1.4 6.9-2.3 11.1-4.7 17.6-11.4 17.6-18 .1-6.6-5.2-13.3-16.6-18.5zM92.1 13.4c4.4 2.6 6.1 8.8 4.4 19.2-.4 2.2-.9 4.5-1.5 6.8-4.5-1-9.2-1.8-14.1-2.4-.9-1.3-1.8-2.5-2.8-3.7-2.7-3.3-5.5-6.3-8.3-9.1 8-7.7 15.8-12 22.3-10.8zm-79 33.3c2.2-.7 4.5-1.4 6.8-2 .5 2.1 1.1 4.2 1.8 6.3-2.2-.7-4.3-1.4-6.3-2.2-4.6-1.9-7.4-4.4-7.4-6.5 0-2.1 2.8-4.6 7.4-6.5 2-.8 4.1-1.5 6.3-2.2-.7 2.1-1.3 4.2-1.8 6.3-2.3-.6-4.6-1.3-6.8-2zm8.5-23c-1.7 10.3.2 16.5 4.4 19.1.9.5 2 1 3.1 1.3-1.4-1.4-2.8-2.9-4.1-4.4-1.3-1.5-2.5-3-3.4-4.5zm0 63.3c.9-1.5 2.1-3 3.4-4.5 1.3-1.5 2.7-3 4.1-4.4-1.1.3-2.2.8-3.1 1.3-4.2 2.6-6.1 8.8-4.4 19.1z"/></g></svg>
+              </div>
+              <span class="tech-icon-label">React</span>
+            </div>
+            <div class="tech-icon-card" id="tech-html-icon">
+              <div class="tech-icon-wrap" style="--icon-color:#e34f26;">
+                <svg viewBox="0 0 128 128" width="36" height="36"><path fill="#e34f26" d="M9.032 2l10.005 112.093 44.896 12.401 45.02-12.387L118.968 2zm89.126 26.994l-.636 7.055H48.554l1.675 18.65h48.357l-3.34 37.283L64 101.29 33.768 92.01 31.88 70.7h18.219l.94 10.608L64 85.19l13.029-3.9.96-10.727H30.614L27.085 29.48h73.886z"/></svg>
+              </div>
+              <span class="tech-icon-label">HTML5</span>
+            </div>
+            <div class="tech-icon-card" id="tech-css-icon">
+              <div class="tech-icon-wrap" style="--icon-color:#264de4;">
+                <svg viewBox="0 0 128 128" width="36" height="36"><path fill="#264de4" d="M9.04 2.02L19.1 114.32l44.9 12.41 45.04-12.41L118.96 2zm89.2 27.2l-.63 7.03H48.59l1.68 18.7h48.37l-3.36 37.3-30.71 8.54-30.74-8.55-1.98-21.4h18.25l.94 10.6 13.54 3.92 13.54-3.93.99-11.02H31.67l-3.53-39.8h71.83z"/></svg>
+              </div>
+              <span class="tech-icon-label">CSS3</span>
+            </div>
+            <div class="tech-icon-card" id="tech-js-icon">
+              <div class="tech-icon-wrap" style="--icon-color:#f0db4f;">
+                <svg viewBox="0 0 128 128" width="36" height="36"><path fill="#f0db4f" d="M1.408 1.408h125.184v125.185H1.408z"/><path fill="#323330" d="M116.347 96.736c-.917-5.711-4.641-10.508-15.672-14.981-3.832-1.761-8.104-3.022-9.377-5.926-.452-1.69-.512-2.642-.226-3.665.821-3.32 4.784-4.355 7.925-3.403 2.023.678 3.938 2.237 5.093 4.724 5.402-3.498 5.391-3.475 9.163-5.879-1.381-2.141-2.118-3.129-3.022-4.045-3.249-3.629-7.676-5.498-14.756-5.355l-3.688.477c-3.534.893-6.902 2.748-8.877 5.235-5.926 6.724-4.236 18.492 2.975 23.335 7.104 5.332 17.54 6.545 18.873 11.531 1.297 6.104-4.486 8.08-10.234 7.378-4.236-.881-6.592-3.034-9.139-6.949-4.688 2.713-4.688 2.713-9.508 5.485 1.143 2.499 2.344 3.63 4.26 5.795 9.068 9.198 31.76 8.746 35.83-5.176.165-.478 1.261-3.666.38-8.581zm-46.885-37.793h-11.962c0 7.66-.007 15.282-.007 22.959 0 4.883.364 9.666-.542 11.056-1.689 3.351-6.201 2.994-8.576 2.568-2.488-1.003-3.737-2.521-5.222-4.819-1.332-2.236-2.172-3.857-2.557-3.875-3.797 2.355-7.577 4.7-11.353 7.057 1.98 4.109 4.763 8.091 8.267 10.449 5.956 3.926 13.861 5.018 21.825 3.12 5.083-1.369 9.437-4.538 11.667-9.28 3.067-5.921 2.428-13.083 2.428-19.802.01-11.968.005-23.931.005-35.833z"/></svg>
+              </div>
+              <span class="tech-icon-label">JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-category reveal">
+          <h3 class="tech-cat-title">Tools</h3>
+          <div class="tech-icons-row">
+            <div class="tech-icon-card" id="tech-git">
+              <div class="tech-icon-wrap" style="--icon-color:#f05032;">
+                <svg viewBox="0 0 128 128" width="36" height="36"><path fill="#f05032" d="M124.742 58.378L69.625 3.264c-3.172-3.174-8.32-3.174-11.497 0L46.685 14.71l14.518 14.518c3.375-1.139 7.243-.375 9.932 2.314 2.703 2.706 3.461 6.607 2.294 9.993l13.993 13.993c3.385-1.167 7.292-.413 9.994 2.295 3.78 3.777 3.78 9.9 0 13.679a9.673 9.673 0 01-13.683 0 9.677 9.677 0 01-2.105-10.521L68.574 47.933l-.002 34.341a9.708 9.708 0 012.559 1.828c3.778 3.777 3.778 9.898 0 13.683-3.779 3.777-9.904 3.777-13.679 0-3.778-3.784-3.778-9.905 0-13.683a9.65 9.65 0 013.167-2.11V47.333a9.581 9.581 0 01-3.167-2.11c-2.862-2.86-3.551-7.06-2.083-10.576L40.819 20.123 3.256 57.69c-3.172 3.174-3.172 8.32 0 11.497l55.126 55.114c3.174 3.174 8.32 3.174 11.499 0l54.861-54.861c3.175-3.176 3.175-8.32 0-11.062z"/></svg>
+              </div>
+              <span class="tech-icon-label">Git</span>
+            </div>
+            <div class="tech-icon-card" id="tech-vscode">
+              <div class="tech-icon-wrap" style="--icon-color:#007acc;">
+                <svg viewBox="0 0 128 128" width="36" height="36"><mask id="vsc-mask"><path fill="#fff" d="M90.767 127.126a10.291 10.291 0 007.317-.073l23.534-11.021a10.287 10.287 0 006.382-9.478V21.446a10.287 10.287 0 00-6.382-9.478L98.084.947a10.291 10.291 0 00-11.734 2.244L36.45 49.767 15.35 34.292a6.871 6.871 0 00-8.78.483L1.023 39.987A6.871 6.871 0 001 50.116l18.279 13.884L1 77.884A6.87 6.87 0 001.023 88.013l5.547 5.212a6.871 6.871 0 008.78.483L36.45 78.234l49.9 46.576a10.287 10.287 0 004.417 2.316z"/></mask><mask id="vsc-mask2"><path fill="#fff" d="M98.084 127.053l23.534-11.021A10.287 10.287 0 00128 106.554V21.446a10.287 10.287 0 00-6.382-9.478L98.084.947a10.291 10.291 0 00-11.734 2.244L36.45 49.767 15.35 34.292a6.871 6.871 0 00-8.78.483L1.023 39.987A6.871 6.871 0 001 50.116l18.279 13.884L1 77.884A6.87 6.87 0 001.023 88.013l5.547 5.212a6.871 6.871 0 008.78.483L36.45 78.234l49.9 46.576a10.287 10.287 0 0011.734 2.243z"/></mask><g mask="url(#vsc-mask)"><path fill="#007acc" d="M121.618 11.968L98.084.947a10.291 10.291 0 00-11.734 2.244L1.023 89.996l36.449 27.664 84.146-105.692z"/><path fill="#0065a9" d="M128 21.446V106.554a10.287 10.287 0 01-6.382 9.478l-23.534 11.021a10.29 10.29 0 01-8.25-.401l-1.484-.843 37.35-47.044a10.288 10.288 0 002.3-6.404V55.639a10.287 10.287 0 00-2.3-6.404L88.35 2.191l1.484-.843a10.29 10.29 0 018.25-.401l23.534 11.021A10.287 10.287 0 01128 21.446z"/><path fill="#1f9cf0" d="M86.35 127.126l-49.9-46.576-15.1 15.492 15.1 11.592-36.449-27.664 17.279-13.084L1 50.116l18.279-13.884L1 22.384V21.446A10.287 10.287 0 0111.952 12.1l-.929-.434 75.327 115.46z"/></g></svg>
+              </div>
+              <span class="tech-icon-label">VS Code</span>
+            </div>
+            <div class="tech-icon-card" id="tech-maven">
+              <div class="tech-icon-wrap" style="--icon-color:#c71a36;">
+                <svg viewBox="0 0 24 24" width="36" height="36" fill="#c71a36"><path d="M13.5 2a1 1 0 0 0-1 1v3.5H9a1 1 0 0 0 0 2h3.5V12H9a1 1 0 0 0 0 2h3.5v3.5H9a1 1 0 0 0 0 2h3.5V21a1 1 0 0 0 2 0v-1.5H18a1 1 0 0 0 0-2h-3.5V15H18a1 1 0 0 0 0-2h-3.5v-3.5H18a1 1 0 0 0 0-2h-3.5V3a1 1 0 0 0-1-1z"/></svg>
+              </div>
+              <span class="tech-icon-label">Maven</span>
+            </div>
+            <div class="tech-icon-card" id="tech-postman">
+              <div class="tech-icon-wrap" style="--icon-color:#ff6c37;">
+                <svg viewBox="0 0 24 24" width="36" height="36" fill="#ff6c37"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.5 7.5l-9 9a1 1 0 01-1.414-1.414l9-9A1 1 0 0116.5 9.5z"/></svg>
+              </div>
+              <span class="tech-icon-label">Postman</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Skill progress bars -->
+      <div class="skill-bars-section">
+        <div class="skill-bar-row reveal">
+          <div class="skill-bar-info">
+            <span class="skill-bar-name">Java &amp; Backend</span>
+            <span class="skill-bar-pct">90%</span>
+          </div>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" style="--level:90%" data-level="90%"></div>
+          </div>
+        </div>
+        <div class="skill-bar-row reveal">
+          <div class="skill-bar-info">
+            <span class="skill-bar-name">React &amp; Frontend</span>
+            <span class="skill-bar-pct">82%</span>
+          </div>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" style="--level:82%" data-level="82%"></div>
+          </div>
+        </div>
+        <div class="skill-bar-row reveal">
+          <div class="skill-bar-info">
+            <span class="skill-bar-name">MySQL &amp; Databases</span>
+            <span class="skill-bar-pct">85%</span>
+          </div>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" style="--level:85%" data-level="85%"></div>
+          </div>
+        </div>
+        <div class="skill-bar-row reveal">
+          <div class="skill-bar-info">
+            <span class="skill-bar-name">HTML / CSS</span>
+            <span class="skill-bar-pct">92%</span>
+          </div>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" style="--level:92%" data-level="92%"></div>
+          </div>
+        </div>
+        <div class="skill-bar-row reveal">
+          <div class="skill-bar-info">
+            <span class="skill-bar-name">JavaScript</span>
+            <span class="skill-bar-pct">80%</span>
+          </div>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" style="--level:80%" data-level="80%"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FEATURED PROJECT — HOSPITAL MGMT
+  ══════════════════════════════════════ -->
+  <section class="section section-featured" id="featured" aria-label="Featured project">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Case Study</p>
+        <h2 class="section-title">
+          Featured <em class="cursive-accent">project</em>
+        </h2>
+      </div>
+      <div class="featured-layout reveal">
+        <div class="featured-img-col">
+          <div class="featured-img-frame">
+            <img src="C:/Users/Hp/.gemini/antigravity/brain/65a2bfd7-155d-43d3-8221-947bd8050237/hospital_project_1783151162650.png"
+                 alt="Hospital Management System"
+                 class="featured-img" loading="lazy" />
+            <div class="featured-img-glow"></div>
+          </div>
+        </div>
+        <div class="featured-content-col">
+          <span class="featured-tag">01 — Full Stack Project</span>
+          <h3 class="featured-title">Hospital Management System</h3>
+          <p class="featured-desc">
+            A comprehensive web-based hospital management system built to streamline clinical operations.
+            Features include patient registration, doctor scheduling, appointment booking, bed allocation,
+            billing, and real-time reporting dashboards.
+          </p>
+          <div class="featured-tech">
+            <span class="tech-badge" style="--badge-color:#f89820;">Java</span>
+            <span class="tech-badge" style="--badge-color:#4479a1;">MySQL</span>
+            <span class="tech-badge" style="--badge-color:#e34f26;">HTML/CSS</span>
+            <span class="tech-badge" style="--badge-color:#f0db4f;">JavaScript</span>
+          </div>
+          <div class="featured-highlights">
+            <div class="highlight-item">
+              <span class="highlight-icon">🏥</span>
+              <div>
+                <strong>Patient Management</strong>
+                <p>Registration, history, and appointment tracking</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-icon">📊</span>
+              <div>
+                <strong>Admin Dashboard</strong>
+                <p>Real-time stats, bed occupancy, billing reports</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-icon">🔐</span>
+              <div>
+                <strong>Role-based Access</strong>
+                <p>Doctor, nurse, admin, and receptionist views</p>
+              </div>
+            </div>
+          </div>
+          <div class="featured-actions">
+            <a href="#" class="btn-gradient" id="featured-demo-link">Live Demo ↗</a>
+            <a href="#" class="btn-ghost btn-dark" id="featured-github-link">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-blob bg-blob-3" aria-hidden="true"></div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       PROJECTS GRID
+  ══════════════════════════════════════ -->
+  <section class="section section-projects" id="projects" aria-label="Projects section">
+    <div class="projects-dark-bg"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <div class="section-header reveal">
+        <p class="section-eyebrow section-eyebrow--light">More work</p>
+        <h2 class="section-title section-title--light">
+          Other <em class="cursive-accent cursive-accent--blue">projects</em>
+        </h2>
+      </div>
+      <div class="projects-grid">
+        <article class="project-card reveal" id="project-food" aria-label="Food Delivery Application">
+          <div class="project-card-img">
+            <img src="C:/Users/Hp/.gemini/antigravity/brain/65a2bfd7-155d-43d3-8221-947bd8050237/food_project_1783151177122.png"
+                 alt="Food Delivery App" class="project-img" loading="lazy" />
+            <div class="project-card-overlay">
+              <div class="project-card-links">
+                <a href="#" class="project-link-btn" id="food-demo">Live ↗</a>
+                <a href="#" class="project-link-btn" id="food-github">GitHub ↗</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card-body">
+            <div class="project-tags">
+              <span class="tech-badge-sm" style="--badge-color:#f89820;">Java</span>
+              <span class="tech-badge-sm" style="--badge-color:#61dafb;">React</span>
+              <span class="tech-badge-sm" style="--badge-color:#4479a1;">MySQL</span>
+              <span class="tech-badge-sm" style="--badge-color:#f0db4f;">JavaScript</span>
+            </div>
+            <h3 class="project-card-title">Food Delivery Application</h3>
+            <p class="project-card-desc">
+              Modern food delivery platform with restaurant discovery, dynamic menus,
+              cart management, and real-time order tracking. React UI + Java backend.
+            </p>
+            <div class="project-card-footer">
+              <a href="#" class="link-accent" id="food-link-demo">View Project →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Placeholder card for future project -->
+        <article class="project-card project-card--placeholder reveal" id="project-coming" aria-label="Coming soon project">
+          <div class="project-card-body project-card-body--center">
+            <div class="placeholder-icon">✦</div>
+            <h3 class="project-card-title">Next Project</h3>
+            <p class="project-card-desc">Currently in development. Something exciting is coming soon — stay tuned!</p>
+            <div class="project-card-footer">
+              <a href="#contact" class="link-accent">Collaborate? →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       CODING ACTIVITY
+  ══════════════════════════════════════ -->
+  <section class="section section-activity" id="activity" aria-label="Coding activity">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Consistency</p>
+        <h2 class="section-title">
+          Coding <em class="cursive-accent">activity</em>
+        </h2>
+      </div>
+      <div class="activity-card reveal">
+        <div class="activity-header">
+          <p class="activity-label">GitHub-style Contribution Graph — 2025</p>
+          <div class="activity-legend">
+            <span class="legend-box" style="--c:rgba(255,255,255,0.05)"></span>
+            <span class="legend-box" style="--c:#1a3a5c"></span>
+            <span class="legend-box" style="--c:#2563a8"></span>
+            <span class="legend-box" style="--c:#3b82f6"></span>
+            <span class="legend-box" style="--c:#60a5fa"></span>
+            <span class="legend-label">More</span>
+          </div>
+        </div>
+        <div class="contrib-grid" id="contrib-grid" aria-label="Contribution graph" role="img"></div>
+        <div class="activity-months" id="activity-months"></div>
+      </div>
+    </div>
+    <div class="bg-blob bg-blob-4" aria-hidden="true"></div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       EDUCATION
+  ══════════════════════════════════════ -->
+  <section class="section section-education" id="education" aria-label="Education section">
+    <div class="edu-dark-bg"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <div class="section-header reveal">
+        <p class="section-eyebrow section-eyebrow--light">Background</p>
+        <h2 class="section-title section-title--light">
+          Education &amp; <em class="cursive-accent cursive-accent--blue">experience</em>
+        </h2>
+      </div>
+      <div class="edu-timeline">
+        <div class="edu-card reveal" id="edu-internship">
+          <div class="edu-card-top">
+            <div class="edu-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+            </div>
+            <span class="edu-badge">Current</span>
+          </div>
+          <h3 class="edu-title">Full Stack Java Developer Intern</h3>
+          <p class="edu-org">
+            <a href="https://www.tapacademy.in" target="_blank" rel="noopener" class="link-accent" id="edu-tap-link">Tap Academy</a>
+            — Bangalore, Karnataka
+          </p>
+          <p class="edu-year">2025 – Present</p>
+          <p class="edu-desc">Hands-on training on live industry projects covering Java backend APIs, React frontends, and full-stack web integration at one of Bangalore's premier tech institutes.</p>
+        </div>
+        <div class="edu-card reveal" id="edu-degree">
+          <div class="edu-card-top">
+            <div class="edu-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+          </div>
+          <h3 class="edu-title">Bachelor of Engineering</h3>
+          <p class="edu-org">Angadi Institute of Technology and Management — Belagavi, Karnataka</p>
+          <p class="edu-year">Completed</p>
+          <p class="edu-desc">Computer Science engineering fundamentals — data structures, algorithms, OS, DBMS, software engineering, and full-stack web development principles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       CONTACT
+  ══════════════════════════════════════ -->
+  <section class="section section-contact" id="contact" aria-label="Contact section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Let's connect</p>
+        <h2 class="section-title">
+          Start a <em class="cursive-accent">conversation</em>
+        </h2>
+        <p class="section-subtitle">Open to full-time roles, freelance projects, and exciting collaborations.</p>
+      </div>
+      <div class="contact-layout">
+        <form class="contact-form glass-card reveal" id="contact-form" novalidate aria-label="Contact form">
+          <h3 class="form-title">Send a Message</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="contact-name">Name</label>
+              <input type="text" id="contact-name" name="name" class="form-input" placeholder="Your name" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-email">Email</label>
+              <input type="email" id="contact-email" name="email" class="form-input" placeholder="your@email.com" required autocomplete="email" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-subject">Subject</label>
+            <input type="text" id="contact-subject" name="subject" class="form-input" placeholder="Job opportunity / Collaboration…" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" class="form-input form-textarea" placeholder="Tell me about your project…" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn-gradient btn-submit" id="contact-submit">Send Message ✈</button>
+          <p class="form-status" id="form-status" role="alert" aria-live="polite"></p>
+        </form>
+        <div class="contact-info-col reveal">
+          <div class="contact-info-card glass-card">
+            <h3 class="contact-info-title">Contact Details</h3>
+            <div class="contact-info-block">
+              <div class="contact-info-icon">📞</div>
+              <div>
+                <p class="contact-info-label">Phone</p>
+                <a href="tel:+916361949371" class="contact-info-val link-accent" id="contact-phone">+91 6361949371</a>
+              </div>
+            </div>
+            <div class="contact-info-block">
+              <div class="contact-info-icon">✉️</div>
+              <div>
+                <p class="contact-info-label">Email</p>
+                <a href="mailto:hareeshalal@email.com" class="contact-info-val link-accent" id="contact-email-link">hareeshalal@email.com</a>
+              </div>
+            </div>
+            <div class="contact-info-block">
+              <div class="contact-info-icon">📍</div>
+              <div>
+                <p class="contact-info-label">Location</p>
+                <p class="contact-info-val">Bangalore, Karnataka, India</p>
+              </div>
+            </div>
+          </div>
+          <div class="contact-social-row">
+            <a href="#" class="social-btn" id="contact-linkedin-btn" aria-label="LinkedIn" target="_blank" rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+            <a href="#" class="social-btn" id="contact-github-btn" aria-label="GitHub" target="_blank" rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-blob bg-blob-5" aria-hidden="true"></div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="footer" id="footer" role="contentinfo">
+    <div class="footer-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="footer-logo" id="footer-logo">
+            <span class="logo-bracket">&lt;</span>HA<span class="logo-bracket">/&gt;</span>
+          </a>
+          <p class="footer-tagline">Full Stack Java Developer<br/>Tap Academy · Bangalore</p>
+        </div>
+        <nav class="footer-links-col" aria-label="Footer navigation">
+          <p class="footer-col-title">Navigation</p>
+          <a href="#about"     class="footer-link">About</a>
+          <a href="#skills"    class="footer-link">Skills</a>
+          <a href="#featured"  class="footer-link">Projects</a>
+          <a href="#education" class="footer-link">Education</a>
+          <a href="#contact"   class="footer-link">Contact</a>
+        </nav>
+        <div class="footer-links-col">
+          <p class="footer-col-title">Connect</p>
+          <a href="https://github.com" target="_blank" rel="noopener" class="footer-link footer-social-link" id="footer-github">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            GitHub
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener" class="footer-link footer-social-link" id="footer-linkedin">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="tel:+916361949371" class="footer-link footer-social-link" id="footer-phone">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.76 19.79 19.79 0 01.07 1.18 2 2 0 012.03 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+            +91 6361949371
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© <span id="footer-year">2026</span> Hareesh Alal. Built with HTML, CSS &amp; JavaScript.</p>
+        <a href="#hero" class="footer-back-top" id="footer-back-top" aria-label="Back to top">↑ Top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
